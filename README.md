@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <sup>1</sup> Pusan National University, South Korea<br>
+  <sup>1</sup> Department of Information Convergence Engineering, Pusan National University, South Korea<br>
   <sup>2</sup> Department of Internal Medicine, Pusan National University Yangsan Hospital, South Korea<br>
   <sup>3</sup> Department of Radiology, Pusan National University Hospital, South Korea
 </p>
