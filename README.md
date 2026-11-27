@@ -17,12 +17,10 @@
 </p>
 
 <p align="center">
-  <sup>1</sup> Pusan National University, Republic of Korea<br>
-  <sup>2</sup> Division of Pulmonary and Critical Care Medicine, Department of Internal Medicine, Pusan National University Yangsan Hospital, Pusan National University School of Medicine, Republic of Korea<br>
-  <sup>3</sup> Department of Radiology, Pusan National University Hospital, Pusan National University School of Medicine and Biomedical Research Institute, Republic of Korea
+  <sup>1</sup> Pusan National University, South Korea<br>
+  <sup>2</sup> Department of Internal Medicine, Pusan National University Yangsan Hospital, South Korea<br>
+  <sup>3</sup> Department of Radiology, Pusan National University Hospital, South Korea
 </p>
-
-<p align="center">† Co-first authors · * Co-corresponding authors</p>
 
 <p align="center"><em>IEEE Transactions on Medical Imaging</em>, 45(6), 3287–3301, 2026</p>
 
