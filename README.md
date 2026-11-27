@@ -1,7 +1,30 @@
-# ASTRA-Net
+<h1 align="center">ASTRA-Net</h1>
 
-**Discovery of Peripheral Airway Beyond Incomplete CT Annotations for Navigational Bronchoscopy**  
-*IEEE Transactions on Medical Imaging*, 2026
+<p align="center">
+  <strong>Discovery of Peripheral Airway Beyond Incomplete CT Annotations for Navigational Bronchoscopy</strong>
+</p>
+
+<p align="center">
+  <a href="https://doi.org/10.1109/TMI.2026.3672178"><img src="https://img.shields.io/badge/Paper-IEEE%20TMI%202026-97BC43?style=flat-square" alt="Paper"></a>
+  <a href="#citation"><img src="https://img.shields.io/badge/Citation-BibTeX-307BB5?style=flat-square" alt="Citation"></a>
+  <a href="https://pypi.org/project/astra-airway/"><img src="https://img.shields.io/badge/Package-PyPI-E2A817?style=flat-square" alt="Package"></a>
+  <a href="https://github.com/guhong3648/ASTRA-Net/releases/tag/v0.3.1"><img src="https://img.shields.io/badge/Model-Weights-4C963B?style=flat-square" alt="Model"></a>
+  <a href="src/Demo_inference_pip_ver.ipynb"><img src="https://img.shields.io/badge/Demo-Notebook-DF782B?style=flat-square" alt="Demo"></a>
+</p>
+
+<p align="center">
+  <strong>SiYeoul Lee<sup>1,†</sup> · MinKyung Seo<sup>1,†</sup> · Jiye Kim<sup>1</sup> · Hyeyun Lee<sup>1</sup> · EonSeung Seong<sup>1</sup> · DongEon Lee<sup>1</sup> · Do Hyung Kim<sup>2</sup> · Yeon Joo Jeong<sup>3</sup> · Hee Yun Seol<sup>2,*</sup> · MinWoo Kim<sup>1,*</sup></strong>
+</p>
+
+<p align="center">
+  <sup>1</sup> Pusan National University, Republic of Korea<br>
+  <sup>2</sup> Division of Pulmonary and Critical Care Medicine, Department of Internal Medicine, Pusan National University Yangsan Hospital, Pusan National University School of Medicine, Republic of Korea<br>
+  <sup>3</sup> Department of Radiology, Pusan National University Hospital, Pusan National University School of Medicine and Biomedical Research Institute, Republic of Korea
+</p>
+
+<p align="center">† Co-first authors · * Co-corresponding authors</p>
+
+<p align="center"><em>IEEE Transactions on Medical Imaging</em>, 45(6), 3287–3301, 2026</p>
 
 ASTRA-Net is a framework for **3D airway segmentation** from chest CT in **Hounsfield units (HU)**. It combines CT intensity, lung and vessel context, and positional encoding to recover peripheral airways beyond incomplete annotations.
 
