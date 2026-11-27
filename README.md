@@ -34,19 +34,19 @@ ASTRA-Net is a framework for **3D airway segmentation** from chest CT in **Houns
 
 ![ASTRA-Net Architecture](fig/Architecture.jpg)
 
-*Overview of the ASTRA-Net architecture and its post-optimization framework.*
+*Overview of the ASTRA-Net architecture and its post-optimization framework*
 
 ### Quantitative Results
 
 ![Quantitative Evaluation](fig/Quantitative.jpg)
 
-*Comparison of airway segmentation accuracy and topological preservation across different methods.*
+*Comparison of airway segmentation accuracy and topological preservation across different methods*
 
 ### Qualitative Results
 
 ![3D Airway Visualization](fig/Qualitative.gif)
 
-*3D airway segmentation comparison across multiple methods, with enlarged views highlighting peripheral airway branches.*
+*3D airway segmentation comparison across multiple methods, with enlarged views highlighting peripheral airway branches*
   
 
 ---
