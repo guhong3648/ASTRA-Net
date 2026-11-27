@@ -24,7 +24,11 @@
 
 <p align="center"><em>IEEE Transactions on Medical Imaging</em>, 45(6), 3287–3301, 2026</p>
 
+<div align="justify">
+
 ASTRA-Net is a framework for **3D airway segmentation** from chest CT in **Hounsfield units (HU)**. It combines CT intensity, lung and vessel context, and positional encoding to recover peripheral airways beyond incomplete annotations.
+
+</div>
 
 [**PyPI**](https://pypi.org/project/astra-airway/) · [**Checkpoints & Enhanced Labels**](https://github.com/guhong3648/ASTRA-Net/releases/tag/v0.3.1) · [**Standalone Demo**](src/Demo_inference_standalone_ver.ipynb) · [**pip Demo**](src/Demo_inference_pip_ver.ipynb)
 
@@ -63,14 +67,22 @@ ASTRA-Net is a framework for **3D airway segmentation** from chest CT in **Houns
 > ```
 
 
+<div align="justify">
+
 Install the inference package from [PyPI](https://pypi.org/project/astra-airway/):
+
+</div>
 
 ```bash
 pip install astra-airway          # Install only the core dependencies
 pip install "astra-airway[demo]"  # Include additional libraries such as SimpleITK, matplotlib, etc...
 ```
 
+<div align="justify">
+
 Use any 3D chest CT in HU:
+
+</div>
 
 ```python
 import SimpleITK as sitk
@@ -93,14 +105,26 @@ sitk.WriteImage(aw_image, 'AW.nii.gz')
 - **ASTRA-Net:** returns `AW`, `LM` (lung mask), and `CV` (vessel context)
 - **Reference models:** return `AW` only
 
+<div align="justify">
+
 The selected checkpoint is **downloaded automatically** from [GitHub Releases](https://github.com/guhong3648/ASTRA-Net/releases/tag/v0.3.1) if missing  
 The default pip checkpoint directory is `~/.cache/astra-airway/model/`
+
+</div>
+
+<div align="justify">
 
 **Available models:** `ASTRA-Net_Phase2` (default), `ASTRA-Net_Phase1`, `UNet`, `FANN`, `UDADS-Net`, `WingsNet`  
 **Defaults:** 64³ patches, overlap 32, batch 32, threshold 0.20, edge exclusion 65
 
+</div>
+
+<div align="justify">
+
 **CUDA note:** PyTorch must be compatible with the NVIDIA driver  
 If CUDA initialization fails, inference may fall back to CPU. See the [pip Demo](src/Demo_inference_pip_ver.ipynb) for a CUDA 11.8 installation example
+
+</div>
 
 ## 2. Demos
 
@@ -109,23 +133,35 @@ If CUDA initialization fails, inference may fall back to CPU. See the [pip Demo]
 | [Standalone Demo](src/Demo_inference_standalone_ver.ipynb) | Uses local `src/astra-airway/` without installing the package |
 | [pip Demo](src/Demo_inference_pip_ver.ipynb) | Uses `pip install "astra-airway[demo]"` and the installed package |
 
+<div align="justify">
+
 Both demos include:
+
+</div>
 
 - Automatic download of the selected checkpoint and Enhanced annotations
 - Three principal-plane projections and **16 axial slices** with green airway overlays (CT window: −600 / 1200 HU)
 - **GT / Enhanced / Pred** comparison, including a zoomed view
 - Saving predicted masks to `res/Demo_Output/`
 
+<div align="justify">
+
 Clone the repository, open either notebook from `src/`, and select a GPU in its first code cell  
 The original CT must be obtained separately from the dataset provider. **GT is not required for inference**
+
+</div>
 
 ```bash
 git clone https://github.com/guhong3648/ASTRA-Net.git
 cd ASTRA-Net/src
 ```
 
+<div align="justify">
+
 **Example case:** `ATM_615` (ATM26 Track 1) = `Shanghai_184` (Enhanced)  
 For this case, the ATM22 Enhanced label is cropped at **Z = 147:737** to match the ATM26 CT ROI (verified against the original CT, MAE = 0 HU)
+
+</div>
 
 ## 3. Data & preprocessing
 
@@ -133,8 +169,12 @@ For this case, the ATM22 Enhanced label is cropped at **Z = 147:737** to match t
 - [ASTRA-Net Release](https://github.com/guhong3648/ASTRA-Net/releases/tag/v0.3.1): six pretrained checkpoints and **20 Enhanced annotations**
 - Case-info CSV files for preprocessing: **included in this repository**
 
+<div align="justify">
+
 The original CT and GT volumes are **not redistributed** here  
 ATM26 is the main dataset for reproduction; ATM22 shares much of the same cohort but uses a different axial ROI
+
+</div>
 
 ### Directory layout
 
@@ -164,19 +204,31 @@ ASTRA-Net/
 └── res/                                        # Results and Demo output
 ```
 
+<div align="justify">
+
 The demo notebooks download Enhanced NRRDs to `data/raw/ATM26_Enhanced/`  
 Set `download_force = True` in the notebook to download and overwrite the Release assets again
 
+</div>
+
 ### Preprocessing
 
+<div align="justify">
+
 Install the full research dependencies from the repository root:
+
+</div>
 
 ```bash
 pip install -r src/requirements.txt
 pip install pynrrd pydicom
 ```
 
+<div align="justify">
+
 Run preprocessing **from `src/`**. Process ATM22 source data and ATM26 Track 1 **before** the Enhanced annotations:
+
+</div>
 
 ```bash
 tput rmam
@@ -188,16 +240,28 @@ python -u preprocessing/Data_Processing_ATM26_Enhanced.py --GPU_NUM 0 --idx_s 0 
 tput smam
 ```
 
+<div align="justify">
+
 These commands illustrate **20 cases per batch**, not the entire dataset. Increase `--idx_s` for subsequent batches  
 Other scripts cover ATM22 validation, ATM22 Enhanced, ATM26 Track 2, BAS, and EXACT
+
+</div>
+
+<div align="justify">
 
 idx_s: start of idx  
 idx_n: number of idx (sample)
 
+</div>
+
 ## 4. Training & evaluation
+
+<div align="justify">
 
 Paper implementation: **Track 1** (`src/src_T1/`)  
 Phase 1 is trained first; Phase 2 uses the completed Phase 1 model
+
+</div>
 
 ```bash
 tput rmam
@@ -213,8 +277,12 @@ tput smam
 - [Track 1 Evaluation](src/src_T1/Evaluation.ipynb): training curves and quantitative metrics
 - [Track 2 Evaluation](src/src_T2/Evaluation.ipynb): anatomical labeling baseline results
 
+<div align="justify">
+
 **Track 2 is not a paper contribution**. It assigns anatomical classes within a fixed Track 1 airway mask and does not change the airway geometry  
 It requires preprocessing with `Data_Processing_ATM26_Track_2.py` and a Track 1 Phase 2 checkpoint
+
+</div>
 
 
 ## 5. Repository Structure
@@ -242,7 +310,11 @@ ASTRA-Net/
 └── res/                               # Experiment results
 ```
 
+<div align="justify">
+
 **Note:** Track 2 is separate from the ASTRA-Net paper
+
+</div>
 
 ## Citation
 
